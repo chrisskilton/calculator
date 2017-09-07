@@ -1,0 +1,40 @@
+{
+  "name": "calculator",
+  "version": "0.0.0",
+  "description": "A calculator app. For calculating.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "mocha",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisskilton/calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisskilton/calculator/issues"
+  },
+  "homepage": "https://github.com/chrisskilton/calculator#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.6.1",
+    "eslint-plugin-react": "^7.3.0",
+    "expectations": "^0.7.1",
+    "mocha": "^3.5.0",
+    "spectron": "^3.7.2",
+    "webpack": "^3.5.6"
+  },
+  "dependencies": {
+    "electron": "1.7.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
+}
