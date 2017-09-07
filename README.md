@@ -13,7 +13,7 @@ The code is made up of small react components with state fed to them with redux.
 
 # You want to run it? FINE.
 
-`npm install; npm start;`
+`npm install; npm start;` (note: you can also run `nvm install` if you use nvm for node version management. it will install 7.9.0 which is what electron currently ships with)
 
 # Them tests?
 
