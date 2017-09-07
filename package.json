@@ -4,10 +4,11 @@
   "description": "A calculator app. For calculating.",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "npm build && electron .",
     "test": "mocha",
     "lint": "eslint .",
-    "ci": "npm run lint && npm test"
+    "ci": "npm run lint && npm test",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
