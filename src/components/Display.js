@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import styles from '../css/display.css';
 
 const Display = ({currentValue}) => (
     <div className="display">

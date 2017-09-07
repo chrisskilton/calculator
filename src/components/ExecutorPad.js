@@ -6,6 +6,7 @@ import {
 } from '../actions/operators';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import styles from '../css/executorpad.css';
 
 const ExecutorPad = ({equals, clear}) => (
     <div className="executorPad">

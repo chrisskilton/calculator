@@ -1,0 +1,6 @@
+.operatorPad {
+    width: 60px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+}

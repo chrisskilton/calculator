@@ -8,6 +8,7 @@ import {
 } from '../actions/operators';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import styles from '../css/operatorpad.css';
 
 const OperatorPad = ({add, subtract, divide, multiply}) => (
     <div className="operatorPad">

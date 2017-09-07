@@ -1,0 +1,11 @@
+.numberInput {
+    float: left;
+}
+
+.numPad {
+    width: 180px;
+    height: 240px;
+    display: inline-block;
+    vertical-align: top;
+    border-right: solid 1px #eee;
+}

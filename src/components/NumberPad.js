@@ -3,6 +3,7 @@ import Input from './Input';
 import {numberInput} from '../actions/numberInput';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import styles from '../css/numpad.css';
 
 const NumberPad = ({onClick}) => (
     <div className="numPad">
