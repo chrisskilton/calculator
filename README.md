@@ -1,4 +1,5 @@
-# calculator
+# calculator [![Build Status](https://travis-ci.org/chrisskilton/calculator.svg?branch=master)](https://travis-ci.org/chrisskilton/calculator) - travis xvfb isn't loving electron it seems. 
+
 A calculator app. For calculating a bit, then probably breaking.
 
 ![Calculator](https://i.imgur.com/q19MrKY.gif)
