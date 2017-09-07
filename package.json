@@ -7,7 +7,7 @@
     "start": "npm run build && electron .",
     "test": "mocha",
     "lint": "eslint .",
-    "ci": "npm run lint && npm test",
+    "ci": "npm install && npm run lint && npm test",
     "build": "webpack"
   },
   "repository": {
