@@ -28,7 +28,7 @@ Here's a gif of them:
 
 - The CSS is loaded at the very top in the index.html rather than per-component. This was a case of "try for a bit but don't waste too much time on it". - FIXED
 - The commits aren't as atomic as I'd like. This is down to inexperience with react and redux and a lot of shuffling around. Many, many commits and then a mammoth rebase at the end. I love rebase.
-- There are only a few integration tests covering some core calculator functionality. I'd ideally have supplemented these integration tests with unit tests of each component/module.
+- There are only a few integration tests covering some core calculator functionality. I'd ideally have supplemented these integration tests with unit tests of each component/module. - UPDATE: there is now a unittest command too. currently only a couple of example tests on the reducer.
 - Code coverage tools are missing here. I like to implement these as part of CI processes to maintain a high level of code coverage in the tests. Istanbul has always been good for this.
 - There may be many breaches of best practice here. This is my first React app.
 - The development workflow is rubbish. It's a "make a change, run webpack, refresh the app" workflow. I had a quick stab at using webpack-dev-server to handle hot reloading but one or more paths must have been wrong because it didn't work as expected.
