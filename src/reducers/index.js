@@ -1,13 +1,11 @@
 'use strict';
 
-import {
-    NUMBER_INPUT,
-    EQUALS,
-    CLEAR,
-    OPERATOR
-} from '../constants/actionTypes';
+import * as ACTION_TYPES from '../constants/actionTypes';
+import {OPERATOR_FUNCS} from '../utils/operator';
 
-const getInitialState = () => ({
+const setNewValue = (...rest) => Object.assign.apply(null, [{}, ...rest]);
+
+export const getInitialState = () => ({
     currentValue: '0',
     lastDigit: null,
     valueAtLastOperator: null,
@@ -15,40 +13,11 @@ const getInitialState = () => ({
     clearOnNextDigit: false
 });
 
-//split into util module
-const OPERATOR_FUNCS = {
-    ADD: (a, b) => parseFloat(a) + parseFloat(b),
-    SUBTRACT: (a, b) => parseFloat(a) - parseFloat(b),
-    DIVIDE: (a, b) => parseFloat(a) / parseFloat(b),
-    MULTIPLY: (a, b) => parseFloat(a) * parseFloat(b),
-}
-
-const setNewValue = (...rest) => Object.assign.apply(null, [{}, ...rest]);
-
 /* eslint complexity: 0*/
-export default function reducer(state = getInitialState(), action) {
+export const reducer = (state = getInitialState(), action) => {
     switch (action.type) {
-        case OPERATOR:
-            if (state.valueAtLastOperator === null) {
-                return setNewValue(state, {
-                    valueAtLastOperator: state.currentValue,
-                    pendingOperator: action.operator,
-                    clearOnNextDigit: true
-                });
-            }
-
-            return setNewValue(state, {
-                currentValue: (OPERATOR_FUNCS[action.operator](state.valueAtLastOperator, state.currentValue)).toString(),
-                pendingOperator: null,
-                clearOnNextDigit: true
-            });
-        case NUMBER_INPUT:
+        case ACTION_TYPES.NUMBER_INPUT:
             const currentValue = state.currentValue;
-
-
-            if (action.value === 0 && currentValue === '0') {
-                return state;
-            }
 
             if (currentValue.indexOf('.') > 0) {
                 return state;
@@ -72,7 +41,21 @@ export default function reducer(state = getInitialState(), action) {
             return setNewValue(state, {
                 currentValue: newValue
             });
-        case EQUALS:
+        case ACTION_TYPES.OPERATOR:
+            if (state.valueAtLastOperator === null) {
+                return setNewValue(state, {
+                    valueAtLastOperator: state.currentValue,
+                    pendingOperator: action.operator,
+                    clearOnNextDigit: true
+                });
+            }
+
+            return setNewValue(state, {
+                currentValue: (OPERATOR_FUNCS[action.operator](state.valueAtLastOperator, state.currentValue)).toString(),
+                pendingOperator: null,
+                clearOnNextDigit: true
+            });
+        case ACTION_TYPES.EQUALS:
             if (!state.pendingOperator) {
                 return state;
             }
@@ -81,7 +64,7 @@ export default function reducer(state = getInitialState(), action) {
                 currentValue: (OPERATOR_FUNCS[state.pendingOperator](state.valueAtLastOperator, state.currentValue)).toString(),
                 clearOnNextDigit: true
             });
-        case CLEAR:
+        case ACTION_TYPES.CLEAR:
             return setNewValue(state, getInitialState());
         default:
             return state;
