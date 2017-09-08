@@ -21,8 +21,7 @@ The code is made up of small react components with state fed to them with redux.
 `npm run ci` will run the code linter and test suite.
 
 Here's a gif of them:
-
-![Tests](https://i.imgur.com/8o2NtL9.gif)
+![Tests](https://i.imgur.com/1Zfs8bz.gif)
 
 # Issues
 
