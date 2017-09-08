@@ -5,7 +5,7 @@ describe('application launch', () => {
     beforeEach(() => {
         this.app = new Application({
             path: './node_modules/.bin/electron',
-            args: [path.resolve(__dirname, '../../main.js')]
+            args: [path.resolve(__dirname, '../main.js')]
         });
 
         return this.app.start();
